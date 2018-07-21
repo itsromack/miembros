@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
 class MembersSeeder extends Seeder
@@ -13,7 +14,8 @@ class MembersSeeder extends Seeder
     public function run()
     {
         $faker = Faker\Factory::create();
-        $results = app('db')->select('SELECT id, name FROM locales');
+
+        $results = DB::select('SELECT id, name FROM locales');
         foreach ($results as $locale)
         {
             Log::info('adding members to locale name [' . $locale->name . ']');
@@ -33,7 +35,14 @@ class MembersSeeder extends Seeder
                         baptised_at = ?,
                         first_name = ?,
                         last_name = ?,
-                        primary_address = ?
+                        primary_address = ?,
+                        secondary_address = ?,
+                        provincial_address = ?,
+                        contact_numbers = ?,
+                        picture = ?,
+                        history = ?,
+                        progress_history = ?,
+                        medical_history = ?
                     ",
                     [
                         $faker->randomNumber,
@@ -41,7 +50,14 @@ class MembersSeeder extends Seeder
                         $faker->date,
                         $first_name,
                         $last_name,
-                        $faker->address
+                        $faker->address,
+                        $faker->address,
+                        $faker->address,
+                        json_encode([$faker->phoneNumber, $faker->phoneNumber, $faker->phoneNumber]),
+                        'https://picsum.photos/200/200?random',
+                        'Ut ab voluptas sed a nam. Sint autem inventore aut officia aut aut blanditiis. Ducimus eos odit amet et est ut eum.',
+                        'Fuga totam reiciendis qui architecto fugiat nemo. Consequatur recusandae qui cupiditate eos quod.',
+                        'Sit vitae voluptas sint non voluptates.'
                     ]
                 );
             }

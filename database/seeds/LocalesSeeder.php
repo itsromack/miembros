@@ -20,7 +20,7 @@ class LocalesSeeder extends Seeder
 
             Log::info('adding locale name [' . $locale_name . ']');
 
-            $results = app('db')->insert(
+            app('db')->insert(
                 "INSERT INTO locales
                 SET
                     name = ?,

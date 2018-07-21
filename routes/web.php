@@ -14,3 +14,7 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->get('/members/list', 'MembersController@list');
+$router->get('/members/{id}', 'MembersController@detail');
+
