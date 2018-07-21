@@ -22,6 +22,7 @@
                         <div>
                             <p>
                             <img data-src="{{ $member->picture }}" src="{{ $member->picture }}" width="200" height="200" align="right" alt="{{ $member->church_id}}" uk-img>
+                                Locale: <span class="uk-badge">{{ $member->locale_name }}</span><br>
                                 Church ID: <strong>{{ $member->church_id }}</strong><br>
                                 Baptism Date: <strong>{{ $member->baptised_at }}</strong><br>
                                 Birth date: <strong>{{ $member->born_at }}</strong><br>
@@ -41,7 +42,7 @@
                                 @else
                                 <strong>NO</strong>
                                 @endif<br>
-                                Voter Precint #: <strong>{{ $member->precint_number }}</strong>
+                                Voting Precint #: <strong>{{ $member->precint_number }}</strong>
                             </p>
                         </div>
                     </div>

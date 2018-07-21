@@ -33,6 +33,7 @@ class MembersSeeder extends Seeder
                         church_id = ?,
                         locale_church_id = ?,
                         baptised_at = ?,
+                        born_at = ?,
                         first_name = ?,
                         last_name = ?,
                         primary_address = ?,
@@ -42,11 +43,15 @@ class MembersSeeder extends Seeder
                         picture = ?,
                         history = ?,
                         progress_history = ?,
-                        medical_history = ?
+                        medical_history = ?,
+                        philhealth_number = ?,
+                        sss_number = ?,
+                        precint_number = ?
                     ",
                     [
                         $faker->randomNumber,
                         $locale->id,
+                        $faker->date,
                         $faker->date,
                         $first_name,
                         $last_name,
@@ -57,7 +62,10 @@ class MembersSeeder extends Seeder
                         'https://picsum.photos/200/200?random',
                         'Ut ab voluptas sed a nam. Sint autem inventore aut officia aut aut blanditiis. Ducimus eos odit amet et est ut eum.',
                         'Fuga totam reiciendis qui architecto fugiat nemo. Consequatur recusandae qui cupiditate eos quod.',
-                        'Sit vitae voluptas sint non voluptates.'
+                        'Sit vitae voluptas sint non voluptates.',
+                        $faker->isbn13,
+                        $faker->isbn10,
+                        $faker->ean8
                     ]
                 );
             }

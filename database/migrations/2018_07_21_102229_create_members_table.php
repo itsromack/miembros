@@ -39,7 +39,7 @@ class CreateMembersTable extends Migration
             $table->string('philhealth_number', 30)->nullable()->default(null);
             $table->string('sss_number', 30)->nullable()->default(null);
             $table->boolean('is_active_voter')->default(true);
-            $table->string('precint_number', 50)->default(true);
+            $table->string('precint_number', 50)->nullable()->default(null);
             $table->text('history')->nullable()->default(null);
             $table->text('progress_history')->nullable()->default(null);
             $table->text('medical_history')->nullable()->default(null);
