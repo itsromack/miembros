@@ -26,6 +26,11 @@ class MembersController extends Controller
             $member = array_pop($result);
         }
 
-        return view('members.detail', compact('member'));
+        $locales = app('db')->select('SELECT id, name FROM locales');
+
+        return view('members.detail', compact(
+            'member',
+            'locales'
+        ));
     }
 }
