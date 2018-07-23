@@ -18,7 +18,6 @@
             <legend class="uk-legend">Personal Data</legend>
             <div class="uk-margin">
                 <label class="uk-form-label">First Name</label>
-                <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: info" uk-tooltip="title: First Name"></span>
                 <div class="uk-form-controls">
                     <input class="uk-input" name="first_name" type="text" value="{{ $member->first_name }}">
                 </div>
