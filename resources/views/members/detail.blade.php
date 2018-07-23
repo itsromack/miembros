@@ -18,6 +18,7 @@
             <legend class="uk-legend">Personal Data</legend>
             <div class="uk-margin">
                 <label class="uk-form-label">First Name</label>
+                <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: info" uk-tooltip="title: First Name"></span>
                 <div class="uk-form-controls">
                     <input class="uk-input" name="first_name" type="text" value="{{ $member->first_name }}">
                 </div>
@@ -65,7 +66,12 @@
             <div class="uk-margin">
                 <label class="uk-form-label">Civil Status</label>
                 <div class="uk-form-controls">
-                    <input class="uk-input" name="civil_status" type="text" value="{{ $member->civil_status }}">
+                    <select class="uk-select" name="civil_status">
+                        <option value="single" @if ('single' == $member->civil_status) selected="selected" @endif>Single</option>
+                        <option value="married" @if ('married' == $member->civil_status) selected="selected" @endif>Married</option>
+                        <option value="separated" @if ('separated' == $member->civil_status) selected="selected" @endif>Separated</option>
+                        <option value="widowed" @if ('widowed' == $member->civil_status) selected="selected" @endif>Widowed</option>
+                    </select>
                 </div>
             </div>
             <div class="uk-margin">

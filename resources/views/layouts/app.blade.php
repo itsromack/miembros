@@ -12,5 +12,6 @@
 
 @yield('scripts')
 
+	<script src="/node_modules/uikit/dist/js/uikit-icons.min.js"></script>
     </body>
 </html>
