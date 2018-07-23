@@ -17,6 +17,24 @@
 
             <legend class="uk-legend">Personal Data</legend>
             <div class="uk-margin">
+                <label class="uk-form-label">First Name</label>
+                <div class="uk-form-controls">
+                    <input class="uk-input" name="first_name" type="text" value="{{ $member->first_name }}">
+                </div>
+            </div>
+            <div class="uk-margin">
+                <label class="uk-form-label">Middle Name</label>
+                <div class="uk-form-controls">
+                    <input class="uk-input" name="middle_name" type="text" value="{{ $member->middle_name }}">
+                </div>
+            </div>
+            <div class="uk-margin">
+                <label class="uk-form-label">Last Name</label>
+                <div class="uk-form-controls">
+                    <input class="uk-input" name="last_name" type="text" value="{{ $member->last_name }}">
+                </div>
+            </div>
+            <div class="uk-margin">
                 <label class="uk-form-label">Locale</label>
                 <div class="uk-form-controls">
                     <select class="uk-select" name="locale_church_id">
