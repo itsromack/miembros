@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "chart.js": "^2.7.2",
     "uikit": "^3.0.0-rc.9"
   }
 }
