@@ -15,7 +15,7 @@
             <tr>
                 <th>Church ID</th>
                 <th>Full Name</th>
-                <th>Primary Address</th>
+                <th>Locale</th>
                 <th>Status</th>
                 <th></th>
             </tr>
@@ -24,7 +24,7 @@
             <tr>
                 <td>Church ID</td>
                 <th>Full Name</th>
-                <th>Primary Address</th>
+                <th>Locale</th>
                 <th>Status</th>
                 <th></th>
             </tr>
@@ -34,7 +34,7 @@
             <tr>
                 <td>{{ $member->church_id }}</td>
                 <td>{{ $member->last_name }}, {{ $member->first_name }} {{ $member->middle_name }}</td>
-                <td>{{ $member->primary_address }}</td>
+                <td>{{ $member->locale_name }}</td>
                 <td>
                     @if ('active' == $member->active_status_level)
                     <span class="uk-label uk-label-success">

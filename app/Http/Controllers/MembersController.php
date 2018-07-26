@@ -6,7 +6,11 @@ class MembersController extends Controller
 {
     public function list()
     {
-        $members = app('db')->select('SELECT * FROM members');
+        $members = app('db')->select('
+            SELECT m.*, l.name AS locale_name
+            FROM members m
+            JOIN locales l
+                ON (m.locale_church_id=l.id)');
 
         return view('members.list', compact('members'));
     }

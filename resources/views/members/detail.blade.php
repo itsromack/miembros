@@ -19,7 +19,7 @@
             <div class="uk-margin">
                 <label class="uk-form-label">First Name</label>
                 <div class="uk-form-controls">
-                    <input class="uk-input" name="first_name" type="text" value="{{ $member->first_name }}">
+                    <input class="uk-input tippy" name="first_name" type="text" value="{{ $member->first_name }}" title="First Name">
                 </div>
             </div>
             <div class="uk-margin">
@@ -162,10 +162,18 @@
                 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </div>
         </fieldset>
+        <button class="uk-button" id="opentip" data-ot="The content" data-ot-delay="2" data-ot-hide-trigger="closeButton">Text</button>
     </form>
 </div>
 @endsection
 
 @section('scripts')
-<!-- STYLES -->
+<script type="text/javascript">
+(function() {
+    var myInput = document.getElementById("opentip");
+    var inputOpentip = new Opentip(myInput, { showOn: null, style: 'alert' });
+    console.log(inputOpentip);
+    console.log('x');
+})();
+</script>
 @endsection
