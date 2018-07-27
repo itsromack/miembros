@@ -15,6 +15,22 @@ class MembersController extends Controller
         return view('members.list', compact('members'));
     }
 
+    public function list_active_status($active_status)
+    {
+        $active_status = str_replace('%20', ' ', $active_status);
+        $members = app('db')->select('
+            SELECT m.*, l.name AS locale_name
+            FROM members m
+            JOIN locales l
+                ON (m.locale_church_id=l.id)
+            WHERE m.active_status_level = ?', [$active_status]);
+
+        return view('members.active-status-list', compact(
+            'members',
+            'active_status'
+        ));
+    }
+
     public function detail($id)
     {
         $member = null;

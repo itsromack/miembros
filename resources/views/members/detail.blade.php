@@ -8,14 +8,20 @@
 <div class="uk-container uk-overflow-auto">
     <div class="uk-card uk-card-body uk-card-primary">
         <h3 class="uk-card-title">Member Data: {{ $member->last_name }}, {{ $member->first_name }} {{ $member->middle_name }}</h3>
-        <a class="uk-button uk-button-default" href="/members/list">
-            Back
+        <a class="uk-button uk-button-default" href="/locale/list">
+            Locales
         </a>
     </div>
     <form class="uk-form-horizontal uk-margin-large">
         <fieldset class="uk-fieldset">
 
             <legend class="uk-legend">Personal Data</legend>
+            <div class="uk-margin">
+                <label class="uk-form-label">Church ID</label>
+                <div class="uk-form-controls">
+                    <input class="uk-input" name="church_id" type="text" value="{{ $member->church_id }}">
+                </div>
+            </div>
             <div class="uk-margin">
                 <label class="uk-form-label">First Name</label>
                 <div class="uk-form-controls">
@@ -42,12 +48,6 @@
                         <option value="{{ $locale->id }}" @if ($locale->id == $member->locale_church_id) selected="selected" @endif>{{ $locale->name }}</option>
                     @endforeach
                     </select>
-                </div>
-            </div>
-            <div class="uk-margin">
-                <label class="uk-form-label">Church ID</label>
-                <div class="uk-form-controls">
-                    <input class="uk-input" name="church_id" type="text" value="{{ $member->church_id }}">
                 </div>
             </div>
             <div class="uk-margin">
@@ -137,7 +137,12 @@
                 </div>
             </div>
 
-            <legend class="uk-legend">History</legend>
+            <legend class="uk-legend">Medical History</legend>
+            <div class="uk-margin">
+                <textarea class="uk-textarea" name="medical_history">{{ $member->medical_history }}</textarea>
+            </div>
+
+            <legend class="uk-legend">Brief History</legend>
             <div class="uk-margin">
                 <textarea class="uk-textarea" name="history">{{ $member->history }}</textarea>
             </div>
@@ -145,11 +150,6 @@
             <legend class="uk-legend">Progress History</legend>
             <div class="uk-margin">
                 <textarea class="uk-textarea" name="progress_history">{{ $member->progress_history }}</textarea>
-            </div>
-
-            <legend class="uk-legend">Medical History</legend>
-            <div class="uk-margin">
-                <textarea class="uk-textarea" name="medical_history">{{ $member->medical_history }}</textarea>
             </div>
 
             <legend class="uk-legend">Documents</legend>
