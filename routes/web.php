@@ -17,6 +17,7 @@ $router->get('/', function () use ($router) {
 
 $router->get('/members/list', 'MembersController@list');
 $router->get('/members/list/{active_status}', 'MembersController@list_active_status');
+$router->get('/members/{locale_id}/{active_status}', 'MembersController@list_active_status_in_locale');
 $router->get('/members/{id}', 'MembersController@detail');
 
 $router->get('/stats/statuses', 'StatisticsController@active_statuses');

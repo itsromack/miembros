@@ -43,11 +43,41 @@
             <tr>
                 <td>{{ $locale->locale_name }}</td>
                 <td>{{ $locale->members_count }}</td>
-                <td>{{ $locale->active_count }}</td>
-                <td>{{ $locale->irregular_count }}</td>
-                <td>{{ $locale->odt_complete_count }}</td>
-                <td>{{ $locale->odt_incomplete_count }}</td>
-                <td>{{ $locale->missing_count }}</td>
+                <td>
+                    <a href="/members/{{ $locale->id }}/active">
+                        <span class="uk-badge">
+                            {{ $locale->active_count }}
+                        </span>
+                    </a>
+                </td>
+                <td>
+                    <a href="/members/{{ $locale->id }}/irregular">
+                        <span class="uk-badge">
+                            {{ $locale->irregular_count }}
+                        </span>
+                    </a>
+                </td>
+                <td>
+                    <a href="/members/{{ $locale->id }}/inactive odt complete">
+                        <span class="uk-badge">
+                            {{ $locale->odt_complete_count }}
+                        </span>
+                    </a>
+                </td>
+                <td>
+                    <a href="/members/{{ $locale->id }}/inactive odt incomplete">
+                        <span class="uk-badge">
+                            {{ $locale->odt_incomplete_count }}
+                        </span>
+                    </a>
+                </td>
+                <td>
+                    <a href="/members/{{ $locale->id }}/missing">
+                        <span class="uk-badge">
+                            {{ $locale->missing_count }}
+                        </span>
+                    </a>
+                </td>
                 <td>
                     <a class="uk-button uk-button-primary uk-button-small" href="/locale/{{ $locale->id }}">
                         Open Locale
